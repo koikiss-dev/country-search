@@ -7,7 +7,9 @@ const NavContainer = styled.nav`
   padding: 1rem 2rem;
   background-color: var(--Elements);
 `;
-const Title = styled.h1``;
+const Title = styled.h1`
+  display: inline;
+`;
 const DarkContainer = styled.div`
   display: flex;
   align-items: center;
