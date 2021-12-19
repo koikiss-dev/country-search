@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 const ContainerCard = styled.div`
   background-color: var(--Elements);
-  width: 100%;
+  width: 600px;
   border-radius: 8px;
   color: var(--Text);
   margin: 2rem 3rem;
@@ -30,8 +30,8 @@ const CardMain = ({ flag, country, population, region, capital }) => {
       <Image
         src={flag}
         alt={country}
-        width="400"
-        height="200"
+        width="640"
+        height="320"
         quality="90"
         priority
         placeholder="blur"
