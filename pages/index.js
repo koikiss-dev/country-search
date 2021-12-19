@@ -12,7 +12,6 @@ const Home = () => {
       const result = await data;
       setLoader(false);
       setCountry(result);
-      console.log(result);
     } catch (error) {
       console.log(error);
     }
@@ -41,6 +40,7 @@ const Home = () => {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
+          alignItems: "center",
         }}
       >
         {country.map(({ name, flags, capital, population, region }) => {

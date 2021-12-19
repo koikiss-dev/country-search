@@ -15,7 +15,6 @@ const Europe = () => {
       const result = await data;
       setLoader(false);
       setCountry(result);
-      console.log(result);
     } catch (error) {
       console.log(error);
     }
@@ -39,7 +38,14 @@ const Europe = () => {
           ></box-icon>
         </div>
       ) : null}
-      <main>
+      <main
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
         {country.map(({ name, flags, capital, population, region }) => {
           const official = name.official;
           const keyData = name.common;
