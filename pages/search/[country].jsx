@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import Head from "next/head";
 import CardMain from "../../components/CardMain";
 import IndexLayaut from "../../layauts/indexLayaut";
 import { restCountry } from "../../apiconfig/countryApi";
@@ -26,6 +27,9 @@ const Country = () => {
   }, [country]);
   return (
     <IndexLayaut>
+      <Head>
+        <title>Country | {country} </title>
+      </Head>
       {loader ? <LoaderComp /> : null}
       {countryName.map(({ name, flags, capital, population, region }) => {
         const official = name.official;

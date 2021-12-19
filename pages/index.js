@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import CardMain from "../components/CardMain";
+import Head from "next/head";
 import IndexLayaut from "../layauts/indexLayaut";
 import { restCountry } from "../apiconfig/countryApi";
 import LoaderComp from "../components/LoaderComp";
@@ -22,6 +23,9 @@ const Home = () => {
   }, []);
   return (
     <IndexLayaut>
+      <Head>
+        <title>Country</title>
+      </Head>
       {loader ? <LoaderComp /> : null}
 
       {country.map(({ name, flags, capital, population, region }) => {

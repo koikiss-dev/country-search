@@ -40,7 +40,7 @@ const Select = () => {
   const handleItem = (e) => {
     const id = e.target.id;
     setItem(id);
-    if (id === "All") {
+    if (id === "all") {
       router.push("/");
     } else {
       router.push(`/${id}`);

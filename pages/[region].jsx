@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import CardMain from "../components/CardMain";
 import IndexLayaut from "../layauts/indexLayaut";
@@ -25,6 +26,9 @@ const Europe = () => {
   }, [region]);
   return (
     <IndexLayaut>
+      <Head>
+        <title>Country | {region} </title>
+      </Head>
       {loader ? <LoaderComp /> : null}
 
       {country.map(({ name, flags, capital, population, region }) => {
