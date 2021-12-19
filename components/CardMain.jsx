@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 const ContainerCard = styled.div`
   background-color: var(--Elements);
-  width: 600px;
+  width: 100%;
   border-radius: 8px;
   color: var(--Text);
   margin: 2rem 3rem;
