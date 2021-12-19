@@ -5,6 +5,7 @@ import CardMain from "../../components/CardMain";
 import IndexLayaut from "../../layauts/indexLayaut";
 import { restCountry } from "../../apiconfig/countryApi";
 import LoaderComp from "../../components/LoaderComp";
+import Countrys from "../../context/countrys";
 const Country = () => {
   const router = useRouter();
   const { country } = router.query;
@@ -26,28 +27,30 @@ const Country = () => {
     getName(country);
   }, [country]);
   return (
-    <IndexLayaut>
-      <Head>
-        <title>Country | {country} </title>
-      </Head>
-      {loader ? <LoaderComp /> : null}
-      {countryName.map(({ name, flags, capital, population, region }) => {
-        const official = name.official;
-        const keyData = name.common;
-        const capitalCity = capital;
-        const flagsImage = flags.svg;
-        return (
-          <CardMain
-            key={keyData}
-            country={official}
-            flag={flagsImage}
-            population={population}
-            capital={capitalCity}
-            region={region}
-          />
-        );
-      })}
-    </IndexLayaut>
+    <Countrys.Provider value={countryName}>
+      <IndexLayaut>
+        <Head>
+          <title>Country | {country} </title>
+        </Head>
+        {loader ? <LoaderComp /> : null}
+        {countryName.map(({ name, flags, capital, population, region }) => {
+          const official = name.official;
+          const keyData = name.common;
+          const capitalCity = capital;
+          const flagsImage = flags.svg;
+          return (
+            <CardMain
+              key={keyData}
+              country={official}
+              flag={flagsImage}
+              population={population}
+              capital={capitalCity}
+              region={region}
+            />
+          );
+        })}
+      </IndexLayaut>
+    </Countrys.Provider>
   );
 };
 

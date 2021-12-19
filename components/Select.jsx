@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 import styled from "styled-components";
-
+import Countrys from "../context/countrys";
 const ContainerSelect = styled.div`
-  margin: 3rem 4%;
+  margin: 3rem 4% 1rem 4%;
   border-radius: 8px;
   width: 20rem;
   padding: 1.5rem 3rem;
@@ -47,35 +47,48 @@ const Select = () => {
     }
   };
   return (
-    <ContainerSelect onClick={viewList}>
-      <J>
-        <span>{item}</span>
-        <box-icon
-          name={!active ? "chevron-down" : "chevron-up"}
-          color="var(--Text)"
-        ></box-icon>
-      </J>
-      <Selection activeItem={active ? "inline" : "none"}>
-        <SelectOption onClick={handleItem} id="all">
-          All
-        </SelectOption>
-        <SelectOption onClick={handleItem} id="africa">
-          Africa
-        </SelectOption>
-        <SelectOption onClick={handleItem} id="america">
-          America
-        </SelectOption>
-        <SelectOption onClick={handleItem} id="asia">
-          Asia
-        </SelectOption>
-        <SelectOption onClick={handleItem} id="europe">
-          Europe
-        </SelectOption>
-        <SelectOption onClick={handleItem} id="oceania">
-          Oceania
-        </SelectOption>
-      </Selection>
-    </ContainerSelect>
+    <>
+      <ContainerSelect onClick={viewList}>
+        <J>
+          <span>{item}</span>
+          <box-icon
+            name={!active ? "chevron-down" : "chevron-up"}
+            color="var(--Text)"
+          ></box-icon>
+        </J>
+        <Selection activeItem={active ? "inline" : "none"}>
+          <SelectOption onClick={handleItem} id="all">
+            All
+          </SelectOption>
+          <SelectOption onClick={handleItem} id="africa">
+            Africa
+          </SelectOption>
+          <SelectOption onClick={handleItem} id="america">
+            America
+          </SelectOption>
+          <SelectOption onClick={handleItem} id="asia">
+            Asia
+          </SelectOption>
+          <SelectOption onClick={handleItem} id="europe">
+            Europe
+          </SelectOption>
+          <SelectOption onClick={handleItem} id="oceania">
+            Oceania
+          </SelectOption>
+        </Selection>
+      </ContainerSelect>
+      <Countrys.Consumer>
+        {(data) => (
+          <p
+            style={{
+              margin: "0 4% 2rem 4%",
+            }}
+          >
+            Total: {data.length}{" "}
+          </p>
+        )}
+      </Countrys.Consumer>
+    </>
   );
 };
 

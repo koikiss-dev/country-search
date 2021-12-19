@@ -58,9 +58,9 @@ const CardMain = ({ flag, country, population, region, capital }) => {
 CardMain.propTypes = {
   flag: PropTypes.string,
   country: PropTypes.string,
-  population: PropTypes.string,
+  population: PropTypes.number,
   region: PropTypes.string,
-  capital: PropTypes.string,
+  capital: PropTypes.array,
 };
 
 export default CardMain;
