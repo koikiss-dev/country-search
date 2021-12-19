@@ -4,7 +4,7 @@ const LoaderComp = () => {
       style={{
         position: "absolute",
         zIndex: "1000",
-        top: "24%",
+        top: "33%",
         left: "50%",
         right: "50%",
       }}
