@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 import styled from "styled-components";
-import Link from "next/link";
+
 const ContainerSelect = styled.div`
   margin: 3rem 4%;
   border-radius: 8px;
@@ -11,6 +11,7 @@ const ContainerSelect = styled.div`
   color: var(--Text);
   position: relative;
   z-index: 1000;
+  cursor: pointer;
 `;
 const J = styled.div`
   display: flex;
@@ -27,6 +28,7 @@ const Selection = styled(ContainerSelect)`
 const SelectOption = styled.div`
   padding: 5px 3rem;
   color: var(--Text);
+  cursor: pointer;
 `;
 const Select = () => {
   const router = useRouter();
