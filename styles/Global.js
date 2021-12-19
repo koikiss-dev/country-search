@@ -27,5 +27,8 @@ html{
     *, *::after, *::before {
     box-sizing: border-box;
   }
+  img{
+      object-fit: contain;
+  }
 `;
 export default Global;

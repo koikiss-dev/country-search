@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import CardMain from "../components/CardMain";
 import IndexLayaut from "../layauts/indexLayaut";
 import { restCountry } from "../apiconfig/countryApi";
-const Home = () => {
+const Europe = () => {
+  const router = useRouter();
+  const { region } = router.query;
   const [country, setCountry] = useState([]);
   const [loader, setLoader] = useState(false);
   const getData = async () => {
     try {
       setLoader(true);
-      const { data } = await restCountry("/all");
+      const { data } = await restCountry(`/region/${region}`);
       const result = await data;
       setLoader(false);
       setCountry(result);
@@ -19,7 +22,7 @@ const Home = () => {
   };
   useEffect(() => {
     getData();
-  }, []);
+  }, [region]);
   return (
     <IndexLayaut>
       {loader ? (
@@ -36,13 +39,7 @@ const Home = () => {
           ></box-icon>
         </div>
       ) : null}
-      <main
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-        }}
-      >
+      <main>
         {country.map(({ name, flags, capital, population, region }) => {
           const official = name.official;
           const keyData = name.common;
@@ -63,4 +60,5 @@ const Home = () => {
     </IndexLayaut>
   );
 };
-export default Home;
+
+export default Europe;

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 //styled
 const ContainerSearch = styled.div`
-  margin: 3rem 10%;
+  margin: 3rem 4%;
   display: flex;
   background-color: var(--Elements);
   border-radius: 8px;
@@ -18,8 +18,10 @@ const Input = styled.input`
   background-color: var(--Elements);
   padding: 2rem 0;
   color: var(--Text);
+  font-size: 16px;
   &::placeholder {
     color: var(--Text);
+    font-size: 16px;
   }
 `;
 const SearchCountry = () => {
