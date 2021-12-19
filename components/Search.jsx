@@ -15,6 +15,8 @@ const LabelIcon = styled.label`
 const Input = styled.input`
   outline: none;
   border: 0;
+  width: 100%;
+  border-radius: 8px;
   background-color: var(--Elements);
   padding: 2rem 0;
   color: var(--Text);
