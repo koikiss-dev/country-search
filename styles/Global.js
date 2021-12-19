@@ -27,6 +27,10 @@ html{
     *, *::after, *::before {
     box-sizing: border-box;
   }
+  a{
+      text-decoration: none;
+      color: var(--Text);
+  }
   img{
       object-fit: contain;
   }

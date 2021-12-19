@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import Link from "next/link";
 const NavContainer = styled.nav`
   display: flex;
   align-items: center;
@@ -39,7 +40,10 @@ const Nav = () => {
   };
   return (
     <NavContainer>
-      <Title>Where in the world?</Title>
+      <Title>
+        <Link href="/">Where in the world?</Link>
+      </Title>
+
       <DarkContainer>
         <ContainerIcon>
           <Icon onClick={v} type="checkbox" name="" id="" />
