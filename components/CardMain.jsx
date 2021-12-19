@@ -5,12 +5,15 @@ import styled from "styled-components";
 
 const ContainerCard = styled.div`
   background-color: var(--Elements);
-  width: 350px;
+  width: 100%;
   border-radius: 8px;
   color: var(--Text);
   margin: 2rem 3rem;
   display: flex;
   flex-direction: column;
+  @media (min-width: 768px) {
+    margin: 0 auto;
+  }
 `;
 
 const Header = styled.header``;

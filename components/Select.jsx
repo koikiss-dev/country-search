@@ -54,22 +54,22 @@ const Select = () => {
         ></box-icon>
       </J>
       <Selection activeItem={active ? "inline" : "none"}>
-        <SelectOption onClick={handleItem} id="All">
+        <SelectOption onClick={handleItem} id="all">
           All
         </SelectOption>
-        <SelectOption onClick={handleItem} id="Africa">
+        <SelectOption onClick={handleItem} id="africa">
           Africa
         </SelectOption>
-        <SelectOption onClick={handleItem} id="America">
+        <SelectOption onClick={handleItem} id="america">
           America
         </SelectOption>
-        <SelectOption onClick={handleItem} id="Asia">
+        <SelectOption onClick={handleItem} id="asia">
           Asia
         </SelectOption>
-        <SelectOption onClick={handleItem} id="Europe">
+        <SelectOption onClick={handleItem} id="europe">
           Europe
         </SelectOption>
-        <SelectOption onClick={handleItem} id="Oceania">
+        <SelectOption onClick={handleItem} id="oceania">
           Oceania
         </SelectOption>
       </Selection>

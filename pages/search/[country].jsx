@@ -1,33 +1,33 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import CardMain from "../components/CardMain";
-import IndexLayaut from "../layauts/indexLayaut";
-import { restCountry } from "../apiconfig/countryApi";
-import LoaderComp from "../components/LoaderComp";
-const Europe = () => {
+import CardMain from "../../components/CardMain";
+import IndexLayaut from "../../layauts/indexLayaut";
+import { restCountry } from "../../apiconfig/countryApi";
+import LoaderComp from "../../components/LoaderComp";
+const Country = () => {
   const router = useRouter();
-  const { region } = router.query;
-  const [country, setCountry] = useState([]);
+  const { country } = router.query;
+  const [countryName, setCountryName] = useState([]);
   const [loader, setLoader] = useState(false);
-  const getData = async (regionName) => {
+  const getName = async (name) => {
     try {
       setLoader(true);
-      const { data } = await restCountry(`/region/${regionName}`);
+      const { data } = await restCountry(`/name/${name}`);
       const result = await data;
       setLoader(false);
-      setCountry(result);
+      setCountryName(result);
     } catch (error) {
       console.log(error);
     }
   };
+
   useEffect(() => {
-    getData(region);
-  }, [region]);
+    getName(country);
+  }, [country]);
   return (
     <IndexLayaut>
       {loader ? <LoaderComp /> : null}
-
-      {country.map(({ name, flags, capital, population, region }) => {
+      {countryName.map(({ name, flags, capital, population, region }) => {
         const official = name.official;
         const keyData = name.common;
         const capitalCity = capital;
@@ -47,4 +47,4 @@ const Europe = () => {
   );
 };
 
-export default Europe;
+export default Country;
