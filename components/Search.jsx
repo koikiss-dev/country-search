@@ -32,7 +32,6 @@ const SearchCountry = () => {
     const value = e.target.value;
     if (value !== "") {
       router.push(`/search/${value}`);
-      value = "";
     }
   };
   return (
